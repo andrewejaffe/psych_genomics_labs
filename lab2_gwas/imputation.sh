@@ -2,10 +2,12 @@
 # impute2 examples #
 ####################
 
+cd /cloud/project/lab2_gwas
+
 ## get software
 wget https://mathgen.stats.ox.ac.uk/impute/impute_v2.3.2_x86_64_static.tgz
 tar xvfz impute_v2.3.2_x86_64_static.tgz
-export PATH="$PATH:/cloud/project/impute_v2.3.2_x86_64_static"
+export PATH="$PATH:/cloud/project/lab2_gwas/impute_v2.3.2_x86_64_static"
 
 
 ###########################
