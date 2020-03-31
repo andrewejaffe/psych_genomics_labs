@@ -27,7 +27,7 @@ cd impute_v2.3.2_x86_64_static
  -o ./Example/example.chr22.one.phased.impute2
 
 # using shell variables, can save typing
-E=./Example/example.chr22
+E=/cloud/project/lab2_gwas/impute_v2.3.2_x86_64_static/Example/example.chr22
 ./impute2 -m $E.map -h $E.1kG.haps -l $E.1kG.legend \
  -g $E.study.gens -strand_g $E.study.strand \
  -int 20.4e6 20.5e6 -Ne 20000 -o $E.one.phased.shortcut.impute2
@@ -52,7 +52,7 @@ E=./Example/example.chr22
 ## this file doesn't exist the latest download
 ## but this is the gist of the code
 ## note the -chrX flag
-X=./Example/chrX/example.chrX
+X=/cloud/project/lab2_gwas/impute_v2.3.2_x86_64_static/Example/chrX/example.chrX
 ./impute2 -chrX \
  -m $X.map -h $X.reference.hap -l $X.reference.legend \
  -g $X.study.gen -sample_g $X.study.sample \
@@ -117,16 +117,16 @@ head -3 $E.phasing.impute2
 ## all of the above examples are already lined up
 
 # shapeit is a good tool to check your data first
-cd /cloud/project
+cd /cloud/project/lab_gwas
 wget https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.v2.r904.glibcv2.17.linux.tar.gz
 tar xvfz shapeit.v2.r904.glibcv2.17.linux.tar.gz
-export PATH="$PATH:/cloud/project/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin"
+export PATH="$PATH:/cloud/project/lab2_gwas/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin"
 
 # back to impute2 folder
 cd impute_v2.3.2_x86_64_static
 
 ## shapeit check
-B=/cloud/project/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/example
+B=/cloud/project/lab2/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/example
 
 ## no reference
 shapeit -check -G $B/gwas.gen.gz $B/gwas.sample \

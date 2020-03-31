@@ -2,8 +2,13 @@
 ## example plink GWAS ##
 ########################
 
+## Click terminal
+cd /cloud/project/lab2_gwas
+
+
 ## based on https://atgu.mgh.harvard.edu/plinkseq/gwas.shtml
 ## and https://www.cog-genomics.org/plink/1.9/resources#teach
+
 
 ## get plink
 wget http://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20190304.zip
@@ -39,7 +44,7 @@ plink --help # ?
 
 # PATH
 echo $PATH # linux variables
-export PATH="$PATH:."
+export PATH="$PATH:/cloud/project/lab2_gwas"
 plink --help # there we go
 
 ##########################
