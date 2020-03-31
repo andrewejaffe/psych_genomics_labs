@@ -55,11 +55,11 @@ E=/cloud/project/lab2_gwas/impute_v2.3.2_x86_64_static/Example/example.chr22
 ## but this is the gist of the code
 ## note the -chrX flag
 X=/cloud/project/lab2_gwas/impute_v2.3.2_x86_64_static/Example/chrX/example.chrX
-./impute2 -chrX \
- -m $X.map -h $X.reference.hap -l $X.reference.legend \
- -g $X.study.gen -sample_g $X.study.sample \
- -int 10.3e6 10.7e6 -Ne 20000 \
- -o $X.one.phased.impute2
+# ./impute2 -chrX \
+ # -m $X.map -h $X.reference.hap -l $X.reference.legend \
+ # -g $X.study.gen -sample_g $X.study.sample \
+ # -int 10.3e6 10.7e6 -Ne 20000 \
+ # -o $X.one.phased.impute2
  
 ###################
 # one phased reference with variant filtering
@@ -119,7 +119,7 @@ head -3 $E.phasing.impute2
 ## all of the above examples are already lined up
 
 # shapeit is a good tool to check your data first
-cd /cloud/project/lab_gwas
+cd /cloud/project/lab2_gwas
 wget https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.v2.r904.glibcv2.17.linux.tar.gz
 tar xvfz shapeit.v2.r904.glibcv2.17.linux.tar.gz
 export PATH="$PATH:/cloud/project/lab2_gwas/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin"
@@ -128,7 +128,7 @@ export PATH="$PATH:/cloud/project/lab2_gwas/shapeit.v2.904.3.10.0-693.11.6.el7.x
 cd impute_v2.3.2_x86_64_static
 
 ## shapeit check
-B=/cloud/project/lab2/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/example
+B=/cloud/project/lab2_gwas/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/example
 
 ## no reference
 shapeit -check -G $B/gwas.gen.gz $B/gwas.sample \
@@ -150,6 +150,6 @@ more $B/SNPs_to_drop
 ############
 ## rerun ###
 shapeit -check -G $B/gwas.gen.gz $B/gwas.sample \
-      --input-ref $B/reference.haplotypes.gz $B/reference.legend.gz $B/reference.sample \
-      
-        -M $B/genetic_map.txt --output-log $B/gwas.alignments
+	--input-ref $B/reference.haplotypes.gz $B/reference.legend.gz $B/reference.sample \
+	--exclude-snp $B/SNPs_to_drop \ 
+	-M $B/genetic_map.txt --output-log $B/gwas.alignments
