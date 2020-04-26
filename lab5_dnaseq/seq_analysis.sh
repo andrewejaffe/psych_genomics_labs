@@ -1,5 +1,4 @@
 PS1='\W> '
-
 ## get VCF files
 mkdir -p VCF
 
@@ -11,57 +10,57 @@ wget -P VCF/ ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr21
 git clone https://github.com/vcftools/vcftools.git
 cd vcftools
 ./autogen.sh
-./configure --prefix=/cloud/project/vcftools
+./configure --prefix=/cloud/project/lab5_dnaseq/vcftools
 make
 make install
-export PATH="$PATH:/cloud/project/vcftools/bin"
+export PATH="$PATH:/cloud/project/lab5_dnaseq/vcftools/bin"
 
 ## need this too
-export PERL5LIB=/cloud/project/vcftools/src/perl/
+export PERL5LIB=/cloud/project/lab5_dnaseq/vcftools/src/perl/
 
 ## go back out
 cd /cloud/project
 vcftools # works
 
 ## need tabix too
-cd /cloud/project
+cd /cloud/project/lab5_dnaseq
 wget https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar.bz2
 tar vxjf htslib-1.9.tar.bz2
 cd htslib-1.9    # and similarly for bcftools and htslib
 ./configure --prefix=$HOME
 make
 make install
-export PATH="$PATH:/cloud/project/htslib-1.9"
+export PATH="$PATH:/cloud/project/lab5_dnaseq/htslib-1.9"
 tabix # works
 
 ## and samtools
-cd /cloud/project
+cd /cloud/project/lab5_dnaseq
 wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2
 tar vxjf samtools-1.9.tar.bz2
 cd samtools-1.9    # and similarly for bcftools and htslib
 ./configure --prefix=$HOME
 make
 make install
-export PATH="$PATH:/cloud/project/samtools-1.9"
+export PATH="$PATH:/cloud/project/lab5_dnaseq/samtools-1.9"
 samtools
 
 ## and bcftools
-cd /cloud/project
+cd /cloud/project/lab5_dnaseq
 wget https://github.com/samtools/bcftools/releases/download/1.9/bcftools-1.9.tar.bz2
 tar vxjf bcftools-1.9.tar.bz2
 cd bcftools-1.9    # and similarly for bcftools and htslib
 ./configure --prefix=$HOME
 make
 make install
-export PATH="$PATH:/cloud/project/bcftools-1.9"
+export PATH="$PATH:/cloud/project/lab5_dnaseq/bcftools-1.9"
 bcftools
 
 ## get SRA toolkit
-cd /cloud/project
+cd /cloud/project/lab5_dnaseq
 wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz
 tar vxzf sratoolkit.current-centos_linux64.tar.gz
 cd sratoolkit.2.9.6-centos_linux64
-export PATH="$PATH:/cloud/project/sratoolkit.2.9.6-centos_linux64/bin"
+export PATH="$PATH:/cloud/project/lab5_dnaseq/sratoolkit.2.9.6-centos_linux64/bin"
 
 ## test
 fastq-dump -X 5 -Z SRR390728
@@ -76,7 +75,7 @@ fastq-dump -X 5 -Z SRR390728
 ## motivated by: https://vcftools.github.io/man_latest.html
 ## http://samtools.github.io/hts-specs/VCFv4.2.pdf
 
-vcf=/cloud/project/VCF/ALL.chr21.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz
+vcf=/cloud/project/lab5_dnaseq/VCF/ALL.chr21.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz
 
 ## frequeny
 vcftools --gzvcf $vcf --freq --chr 21 --out chr21_freq
@@ -110,10 +109,10 @@ vcftools --vcf VCF/chr21_small.vcf --depth -c > depth_summary.txt
 ## this sample: ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/phase3/data/HG00096
 ## http://www.internationalgenome.org/data-portal/sample/HG00096
 
-mkdir -p /cloud/project/FASTQ
+mkdir -p /cloud/project/lab5_dnaseq/FASTQ
 
 ## just write out the first 100000 reads
-fastq-dump -X 100000 -O /cloud/project/FASTQ/ --split-3 SRR062634
+fastq-dump -X 100000 -O /cloud/project/lab5_dnaseq/FASTQ/ --split-3 SRR062634
 wc -l FASTQ/SRR062634_1.fastq
 head FASTQ/SRR062634_1.fastq
 
