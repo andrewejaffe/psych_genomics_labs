@@ -85,7 +85,7 @@ vcftools --gzvcf $vcf --freq --chr 21 --out chr21_freq
 ## hmm this could take a while
 
 ## maf filter 
-vcftools --gzvcf $vcf  --maf 0.05 --remove-indels --recode --recode-INFO-all --out /cloud/project/VCF/chr21_common
+vcftools --gzvcf $vcf  --maf 0.05 --remove-indels --recode --recode-INFO-all --out /cloud/project/lab5_dnaseq/VCF/chr21_common
 gzip VCF/chr21_common.recode.vcf
 
 ## r2 of genotypes
