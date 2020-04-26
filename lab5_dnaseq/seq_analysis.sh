@@ -59,8 +59,11 @@ bcftools
 cd /cloud/project/lab5_dnaseq
 wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz
 tar vxzf sratoolkit.current-centos_linux64.tar.gz
-cd sratoolkit.2.9.6-centos_linux64
-export PATH="$PATH:/cloud/project/lab5_dnaseq/sratoolkit.2.9.6-centos_linux64/bin"
+cd sratoolkit.2.10.5-centos_linux64
+export PATH="$PATH:/cloud/project/lab5_dnaseq/sratoolkit.2.10.5-centos_linux64/bin"
+
+## new in 2.10
+vdb-config -i 
 
 ## test
 fastq-dump -X 5 -Z SRR390728
