@@ -73,6 +73,7 @@ fastq-dump -X 5 -Z SRR390728
 ###############################
 ## examples using 1000G data ##
 ###############################
+cd /cloud/project/lab5_dnaseq
 
 
 ## motivated by: https://vcftools.github.io/man_latest.html
