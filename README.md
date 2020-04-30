@@ -1,4 +1,5 @@
-# psych_genomics_labs
+# Labs and Videos for Psychiatric Genomics
+
 class labs for Psychiatric Genomics 4th quarter class at JHSPH
 
 ## YouTube Videos
