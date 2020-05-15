@@ -18,3 +18,9 @@ class labs for Psychiatric Genomics 4th quarter class at JHSPH
 |   10  | Rare Variation | https://youtu.be/0RjEOA7LFyo |
 |   11  | Lab 5: DNA-seq | https://youtu.be/CLrbcrLshm8 |
 |   12  |     RNA-seq    | https://youtu.be/aM80VEj1tVg |
+|   13  | Lab 6: RNA-seq | https://youtu.be/2AW2-kRqFDc |
+|   14  |   Pathways     | https://youtu.be/FakR4tJxHbY |
+|   15  |  Cell type     | https://youtu.be/TdXnfEJcx3c |
+|   16  |   RPS Lab      | https://youtu.be/2BYRKZDgI40 |
+|-------|----------------|------------------------------|
+
