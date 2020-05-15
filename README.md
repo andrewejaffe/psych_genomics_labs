@@ -22,5 +22,4 @@ class labs for Psychiatric Genomics 4th quarter class at JHSPH
 |   14  |   Pathways     | https://youtu.be/FakR4tJxHbY |
 |   15  |  Cell type     | https://youtu.be/TdXnfEJcx3c |
 |   16  |   RPS Lab      | https://youtu.be/2BYRKZDgI40 |
-|-------|----------------|------------------------------|
 
